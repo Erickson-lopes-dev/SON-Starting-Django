@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 # ORM - relacionamento de objeto relacional
 # Classe do modelo de dados
@@ -12,6 +12,11 @@ class Post(models.Model):
     # null para DB
     # blank para formulário
     subtitle = models.CharField(max_length=255, blank=True, null=True, verbose_name='Subtitulo')
+    # gerando chave a partir do usuario que estiver logado
+    user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Autor')
+    # models.CASCADE -> se o usuario for deletado sera excluido o registro associado
+    # PROTECT -> se o usuario for deletado não sera excluido o registro associado
+    # SET_NULL -> coloca o valor nulo na chave estrangeira (precisa habilitar null=True para isso acontecer)
 
     class Meta:
         # mudar "post" para artigos
