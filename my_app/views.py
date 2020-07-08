@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .models import Post
 
 # MVC - Model View Controller
 # M - models.py
@@ -12,14 +13,21 @@ from django.http import HttpResponse
 # T template
 # V views.py
 
+
 def home(request):
     return HttpResponse('<h1>Olá, mundo</h1>')
 
 
-def home_param(request, post_id):
-    return HttpResponse(f"<h1>olá post id {post_id}</h1>")
+def post(request, post_id):
+    posts = Post.objects.get(id=post_id)
+    return render(request, 'post.html', {'post':posts})
 
 
 def post_list(request):
-    name = 'luiz Carlos'
-    return render(request, 'post_list.html', {'name': name})
+    posts = Post.objects.all()
+
+    return render(request, 'post_list.html', {'posts':posts})
+
+    # name = 'luiz Carlos'
+    # return render(request, 'post_list.html', {'name': name})
+    # retornando para o templates a variavel name

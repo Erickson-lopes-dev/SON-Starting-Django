@@ -47,6 +47,9 @@ class Post(models.Model):
         # retorna o nome do campo que você desejar
         return f"{self.title} / {self.user}"
 
+    def get_title(self):
+        return self.title
+
 # após fazer alterações ou adicões no banco(
 # python manage.py makemigrations my_app
 # e
