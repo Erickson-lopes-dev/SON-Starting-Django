@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     path('posts/<int:post_id>/', views.home_param),
+    path('posts/', views.post_list),
     # path('posts/<str:post_id>/', views.home_param)
 ]
