@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Postagem</title>
-</head>
-<body>
-    <h1>Listagem de posts</h1>
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h3>Listagem de posts</h3>
     <ul>
 <!--    chamando tag      -->
         {% for post in posts %}
         <li>{{ post.title }}</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+</div>
+
+{% endblock %}

@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+
+{% block content %}
+<div align="center">
     <article>
         <h1>{{ post.title }}</h1>
         <p>{{ post.content }}</p>
+<!--        concatenando |add:' '  -->
         <p>Autor - {{ post.user.first_name | add:' ' | add:post.user.last_name }}</p>
     </article>
-</body>
-</html>
+</div>
+
+{% endblock %}
