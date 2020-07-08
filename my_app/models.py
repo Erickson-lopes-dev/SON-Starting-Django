@@ -9,6 +9,8 @@ class Post(models.Model):
     # e colocando o tipo do registro através do model.
     title = models.CharField(max_length=255)  # max_length=255->maximo de caracteres
     content = models.TextField()  # TextField -> não tem limite de caractere
+    # null para DB
+    # blank para formulário
     subtitle = models.CharField(max_length=255, blank=True, null=True)
 
 # após fazer alterações ou adicões no banco(
