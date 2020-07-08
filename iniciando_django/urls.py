@@ -23,7 +23,7 @@ from my_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
-    path('posts/<int:post_id>/', views.post),
-    path('posts/', views.post_list),
+    path('posts/<int:post_id>/', views.post, name='post'),
+    path('posts/', views.post_list, name='post_list'),
     # path('posts/<str:post_id>/', views.home_param)
 ]

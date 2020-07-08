@@ -1,10 +1,10 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div align="center">
+<div class="container">
     <article>
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.content }}</p>
+        <h1>Post: {{ post.title }}</h1>
+        <p>Comentário: {{ post.content }}</p>
 <!--        concatenando |add:' '  -->
         <p>Autor - {{ post.user.first_name | add:' ' | add:post.user.last_name }}</p>
     </article>
