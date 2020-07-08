@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# importando função que retorna o Http Response
+from my_app import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home),
+    path('posts/<int:post_id>/', views.home_param),
+    # path('posts/<str:post_id>/', views.home_param)
 ]
