@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Post
+
+# administração  do modelo de dados criada
+admin.site.register(Post)
